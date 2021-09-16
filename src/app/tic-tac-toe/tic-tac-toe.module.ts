@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-
+import { TicTacToeComponent } from './tic-tac-toe.component';
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  declarations: [TicTacToeComponent],
+  imports: [CommonModule],
+  exports: [TicTacToeComponent],
 })
-export class TicTacToeModule { }
+export class TicTacToeModule {}
