@@ -1,6 +1,5 @@
 div {
   width: 400px;
-  height: 400px;
   text-align: center;
   font-family: "Press Start 2P", cursive;
 }
@@ -11,6 +10,15 @@ div.main {
 
 a.button {
   margin-top: 100px;
+  margin-left: 20px;
+  font-size: 20px;
+  background-color: lightgreen;
+  padding: 15px;
+}
+
+a.playAgain {
+  margin-top: 100px;
+  margin-right: 20px;
   font-size: 20px;
   background-color: lightgreen;
   padding: 15px;
@@ -40,6 +48,16 @@ ul li {
   background-repeat: no-repeat;
   background-position: 50% 50%;
   cursor: pointer;
+}
+
+h2 {
+  margin-bottom: 30px;
+  margin-left: 20px;
+}
+
+.result {
+  margin-top: 100%;
+  margin-left: 20px;
 }
 
 .kz-border-bottom {
