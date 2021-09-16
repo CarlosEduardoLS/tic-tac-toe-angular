@@ -1,31 +1,102 @@
 <div>
   <h2>Jogo da Velha</h2>
 
-  <div class="main">
-    <a href="#" class="button">Iniciar</a>
+  <div class="main" *ngIf="showStart">
+    <a href="#" class="button" (click)="startGame()">Iniciar</a>
   </div>
 
-  <div>
+  <div *ngIf="showBoard">
     <ul>
-      <li class="kz-border-bottom kz-border-right"></li>
-      <li class="kz-border-bottom kz-border-right"></li>
-      <li class="kz-border-bottom"></li>
-      <li class="kz-border-bottom kz-border-right"></li>
-      <li class="kz-border-bottom kz-border-right"></li>
-      <li class="kz-border-bottom"></li>
-      <li class="kz-border-right"></li>
-      <li class="kz-border-right"></li>
-      <li></li>
+      <li
+        class="kz-border-bottom kz-border-right"
+        [ngClass]="{
+          'kz-img-x': showX(0, 0),
+          'kz-img-o': showO(0, 0),
+          'kz-win-color': showWin(0, 0)
+        }"
+        (click)="play(0, 0)"
+      ></li>
+      <li
+        class="kz-border-bottom kz-border-right"
+        [ngClass]="{
+          'kz-img-x': showX(0, 1),
+          'kz-img-o': showO(0, 1),
+          'kz-win-color': showWin(0, 1)
+        }"
+        (click)="play(0, 1)"
+      ></li>
+      <li
+        class="kz-border-bottom"
+        [ngClass]="{
+          'kz-img-x': showX(0, 2),
+          'kz-img-o': showO(0, 2),
+          'kz-win-color': showWin(0, 2)
+        }"
+        (click)="play(0, 2)"
+      ></li>
+      <li
+        class="kz-border-bottom kz-border-right"
+        [ngClass]="{
+          'kz-img-x': showX(1, 0),
+          'kz-img-o': showO(1, 0),
+          'kz-win-color': showWin(1, 0)
+        }"
+        (click)="play(1, 0)"
+      ></li>
+      <li
+        class="kz-border-bottom kz-border-right"
+        [ngClass]="{
+          'kz-img-x': showX(1, 1),
+          'kz-img-o': showO(1, 1),
+          'kz-win-color': showWin(1, 1)
+        }"
+        (click)="play(1, 1)"
+      ></li>
+      <li
+        class="kz-border-bottom"
+        [ngClass]="{
+          'kz-img-x': showX(1, 2),
+          'kz-img-o': showO(1, 2),
+          'kz-win-color': showWin(1, 2)
+        }"
+        (click)="play(1, 2)"
+      ></li>
+      <li
+        class="kz-border-right"
+        [ngClass]="{
+          'kz-img-x': showX(2, 0),
+          'kz-img-o': showO(2, 0),
+          'kz-win-color': showWin(2, 0)
+        }"
+        (click)="play(2, 0)"
+      ></li>
+      <li
+        class="kz-border-right"
+        [ngClass]="{
+          'kz-img-x': showX(2, 1),
+          'kz-img-o': showO(2, 1),
+          'kz-win-color': showWin(2, 1)
+        }"
+        (click)="play(2, 1)"
+      ></li>
+      <li
+        [ngClass]="{
+          'kz-img-x': showX(2, 2),
+          'kz-img-o': showO(2, 2),
+          'kz-win-color': showWin(2, 2)
+        }"
+        (click)="play(2, 2)"
+      ></li>
     </ul>
   </div>
 
-  <div>
+  <div *ngIf="showEnd">
     <span>
-      <p>Você Venceu!!!</p>
-      <p>Você Perdeu...</p>
-      <p>O Jogo Terminou Empatado...</p>
+      <p *ngIf="player === 2">Você Venceu!!!</p>
+      <p *ngIf="player === 1">Você Perdeu...</p>
+      <p *ngIf="player === 0">O Jogo Terminou Empatado...</p>
       <br />
-      <a href="#" class="button">Jogar novamente</a>
+      <a href="#" class="button" (click)="newGame()">Jogar novamente</a>
     </span>
   </div>
 </div>
