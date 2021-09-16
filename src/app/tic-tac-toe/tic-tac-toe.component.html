@@ -90,13 +90,13 @@
     </ul>
   </div>
 
-  <div *ngIf="showEnd">
+  <div *ngIf="showEnd" class="result">
     <span>
       <p *ngIf="player === 2">Você Venceu!!!</p>
       <p *ngIf="player === 1">Você Perdeu...</p>
       <p *ngIf="player === 0">O Jogo Terminou Empatado...</p>
       <br />
-      <a href="#" class="button" (click)="newGame()">Jogar novamente</a>
+      <a href="#" class="playAgain" (click)="newGame()">Jogar novamente</a>
     </span>
   </div>
 </div>
